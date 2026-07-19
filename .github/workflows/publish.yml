@@ -1,0 +1,23 @@
+name: Publish to PyPI
+
+# Publishes on a version tag (v0.1.0, v1.2.3...). Uses PyPI trusted publishing
+# (OIDC): no token stored anywhere. Configure on pypi.org under the project's
+# "Publishing" tab: owner "serpdive", repo "langchain-serpdive", workflow
+# "publish.yml", environment "pypi".
+on:
+  push:
+    tags: ["v*"]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    environment: pypi
+    permissions:
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install build && python -m build
+      - uses: pypa/gh-action-pypi-publish@release/v1

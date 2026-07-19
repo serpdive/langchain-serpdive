@@ -1,0 +1,37 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "langchain-serpdive"
+version = "0.1.0"
+description = "LangChain integration for SERPdive, the AI Search API and Tavily alternative: answer-ready web content for agents, same speed, 20.2% fewer tokens, higher answer quality (60.7% of decided duels) on a public benchmark"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.9"
+authors = [{ name = "SERPdive", email = "contact@serpdive.com" }]
+keywords = ["langchain", "search", "api", "ai", "llm", "agents", "rag", "web-search", "serpdive", "tavily-alternative", "tavily"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Typing :: Typed",
+]
+dependencies = [
+  "langchain-core>=0.3.0,<2.0.0",
+  "serpdive>=0.1.1",
+  "pydantic>=2.0.0",
+]
+
+[project.urls]
+Homepage = "https://serpdive.com"
+Documentation = "https://serpdive.com/docs"
+Repository = "https://github.com/serpdive/langchain-serpdive"
+
+[tool.hatch.build.targets.wheel]
+packages = ["langchain_serpdive"]
