@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.1 — 2026-07-25
+
+Fixes `__version__`, which still reported `0.1.0`: the constant lived by hand
+next to a version in `pyproject.toml` and the two drifted. It is now read from
+the installed distribution's metadata.
+
 ## 0.2.0 — 2026-07-25
 
 Adds **krill**, the free tier.
