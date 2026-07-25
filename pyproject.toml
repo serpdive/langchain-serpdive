@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "langchain-serpdive"
-version = "0.1.0"
+version = "0.2.0"
 description = "LangChain integration for SERPdive, the AI Search API and Tavily alternative: answer-ready web content for agents, same speed, 20.2% fewer tokens, higher answer quality (60.7% of decided duels) on a public benchmark"
 readme = "README.md"
 license = "MIT"
