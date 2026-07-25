@@ -2,6 +2,8 @@
 
 The official [LangChain](https://python.langchain.com) integration for [SERPdive](https://serpdive.com), the AI Search API: your agent asks a question, the tool returns answer-ready web content that is extracted, cleaned, and sized for an LLM. On a [public, replayable 1,000-question benchmark](https://github.com/edendalexis/serpdive-benchmark), SERPdive runs at the same speed as Tavily, feeds your LLM 20.2% fewer tokens, and wins 60.7% of decided quality duels.
 
+**There is a free tier, and it has no ceiling.** The `krill` model is free and unlimited under fair use — no card, no credits, nothing to decrement. It returns the shortest set of sentences that still answers (about 700 tokens a search, roughly half what the usual alternatives send), one request at a time, at low priority. Use it to build; switch one word to `mako` when you need depth and steady latency.
+
 ## Install
 
 ```bash

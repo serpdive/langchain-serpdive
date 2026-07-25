@@ -43,6 +43,7 @@ class SerpdiveSearch(BaseTool):
             from langchain_serpdive import SerpdiveSearch
 
             tool = SerpdiveSearch(
+                # model="krill",     # free and unlimited (fair use)
                 # model="moby",      # full page text, for deep research
                 # answer=True,       # also return a synthesized answer
                 # max_results=5,     # hard cap on delivered results, 1-10
@@ -71,11 +72,14 @@ class SerpdiveSearch(BaseTool):
 
     model: str = "mako"
     """Retrieval depth: "mako" (default) returns the fact-carrying sentences of
-    each page, fast; "moby" returns the full readable text, for deep research."""
+    each page, fast; "krill" is the free tier — unlimited under fair use, the
+    smallest useful payload, one request at a time, at low priority; "moby"
+    returns the full readable text, for deep research."""
 
     answer: bool = False
     """When True, the output also carries an "answer" field: a direct answer
-    synthesized from the sources (concise on mako, cited on moby)."""
+    synthesized from the sources (concise on mako, cited on moby). Not
+    available on krill, which returns sources only."""
 
     max_results: Optional[int] = None
     """Hard cap on delivered results (1-10). None lets the engine pick its
